@@ -27,7 +27,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<BookStoreContext>().AddDefaultTokenProviders();
-// life cycle DI: addsingletone(), addTransiend(), addscope()
+// life cycle DI: addsingletone(), addTransient(), addscope()
 builder.Services.AddScoped<IBookRes, BookRes>();
 builder.Services.AddScoped<IAccRes, AccRes>();
 builder.Services.AddAuthentication(options =>

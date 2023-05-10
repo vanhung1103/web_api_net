@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<FootballDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Football"));
+});
+
 
 var app = builder.Build();
 
